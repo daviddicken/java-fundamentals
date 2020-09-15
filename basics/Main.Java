@@ -54,6 +54,7 @@ public class Main{
 
   public static void clock(){
     int num = 0;
+    int counter = 0;
     LocalDateTime potatoTime = LocalDateTime.now();
     String time = potatoTime.format(DateTimeFormatter.ofPattern("HH:mm:ss"));
 
@@ -63,9 +64,30 @@ public class Main{
 
       if(!time.equals(newTime)){
         time = potatoTime.format(DateTimeFormatter.ofPattern("HH:mm:ss"));
-        System.out.println(time);
+
+        if(counter > 1000000000){
+          clockString(time, counter, 1000000000, "GHz");
+        }
+        else if(counter > 1000000){
+          clockString(time, counter, 1000000, "MHz");
+        }
+        else if(counter > 1000){
+          clockString(time, counter, 1000, "kHz");
+        }
+        else{
+          System.out.println(time + " time for a new PC.");
+        }
+
+        counter = 0;
       }
+      counter++;
     }
+  }
+
+  public static void clockString(String timeNow, int cycles, int baseNum, String hertz){
+    int speed = cycles / baseNum;
+    int speed2 = cycles % baseNum;
+    System.out.println(timeNow + " " + speed + "." + speed2 + " " + hertz);
   }
 
 }
