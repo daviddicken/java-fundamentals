@@ -83,6 +83,7 @@ public class Main{
       counter++;
     }
   }
+  //--------------------------------------------------
 
   public static void clockString(String timeNow, int cycles, int baseNum, String hertz){
     int speed = cycles / baseNum;
