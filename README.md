@@ -28,5 +28,12 @@
 - enters a forever loop
 - grab a new current time and save it to a variable
 - checks to see if the two time variables are different
-- if different change first variable to new current time and print variable to the screen
+- if different change first variable to new current time
+- test counter against if else statement to pick correct string to be displayed
 - else continue looping user needs to hit cntrl c to quite program
+- created a counter variable to hold how many times while loop is ran per second reset to 0 everytime time is printed to screen
+
+### clockString
+- pass in time string, counter, base number(1 billion, 1 million, 1 thousand), hertz string
+- do the math to to find out how mant millions or billions then use % to find out remainder
+- print out string to the screen with time/ math that was done for speed and hertz that was passed in
