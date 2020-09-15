@@ -24,3 +24,9 @@
 - returns the number of times flipped
 
 ### clock
+- grabs the current time and reformatts it to hh:mm:ss and save it to a variable
+- enters a forever loop
+- grab a new current time and save it to a variable
+- checks to see if the two time variables are different
+- if different change first variable to new current time and print variable to the screen
+- else continue looping user needs to hit cntrl c to quite program
