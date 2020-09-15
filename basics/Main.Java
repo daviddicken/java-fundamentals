@@ -3,13 +3,16 @@ import java.time.format.DateTimeFormatter;
 
 public class Main{
 
-
   public static void main(String[] args){
 
     String name = pluralize("hi", 1);
+    String name1 = pluralize("hi", 0);
+    String name2 = pluralize("hi", 5);
     System.out.println(name);
+    System.out.println(name1);
+    System.out.println(name2);
 
-    int n = 5;
+    int n = 2;
     int flipped = flipNHeads(n);
     System.out.println("It took " + flipped + " flips to flip " + n + " heads in a row.");
 
@@ -53,11 +56,10 @@ public class Main{
     int num = 0;
     LocalDateTime potatoTime = LocalDateTime.now();
     String time = potatoTime.format(DateTimeFormatter.ofPattern("HH:mm:ss"));
-    String newTime = potatoTime.format(DateTimeFormatter.ofPattern("HH:mm:ss"));
 
     while(num == 0){
       potatoTime = LocalDateTime.now();
-      newTime = potatoTime.format(DateTimeFormatter.ofPattern("HH:mm:ss"));
+      String newTime = potatoTime.format(DateTimeFormatter.ofPattern("HH:mm:ss"));
 
       if(!time.equals(newTime)){
         time = potatoTime.format(DateTimeFormatter.ofPattern("HH:mm:ss"));
