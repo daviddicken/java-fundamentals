@@ -37,3 +37,18 @@
 - pass in time string, counter, base number(1 billion, 1 million, 1 thousand), hertz string
 - do the math to to find out how mant millions or billions then use % to find out remainder
 - print out string to the screen with time/ math that was done for speed and hertz that was passed in
+
+
+# Lab 02
+
+### roll
+- takes a integer and returns an array of random numbers between 1-6 the length of integer passed in.
+
+### containsDuplicates
+- takes a array of integers test for duplicates and returns a boolean of true or false.
+
+### calcAvg
+- takes a array of integers and return a average(double) of integers
+
+### arrayAvg
+- takes a array of int arrays and returns the array with the lowest average
