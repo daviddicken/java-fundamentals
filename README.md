@@ -52,3 +52,11 @@
 
 ### arrayAvg
 - takes a array of int arrays and returns the array with the lowest average
+
+# Lab 03
+
+### analize
+- Takes in an array of int arrays. Returns a string telling user the highest and lowest integer and any integers between the high and low that were not used.
+
+### tally
+-  Takes a List of Strings that represents votes and returns a string that tells who got the most votes.
