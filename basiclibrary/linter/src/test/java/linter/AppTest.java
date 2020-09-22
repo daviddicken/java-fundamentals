@@ -9,11 +9,11 @@ import static org.junit.Assert.assertEquals;
 
 public class AppTest {
     @Test public void testAppHasAGreeting() {
-        App testLintr = new App();
-        String oneError = "Line 4: Missing semicolon.";
+        //App testLintr = new App();
+        String oneError = "Line 4: Missing semicolon.\n";
         String fewErrors = "Line 1: Missing semicolon.\n" +
                 "Line 3: Missing semicolon.\n" +
-                "Line 5: Missing semicolon.";
+                "Line 5: Missing semicolon.\n";
         String manyErrors = "Line 3: Missing semicolon.\n" +
                 "Line 5: Missing semicolon.\n" +
                 "Line 11: Missing semicolon.\n" +
@@ -59,9 +59,10 @@ public class AppTest {
                 "Line 98: Missing semicolon.\n" +
                 "Line 99: Missing semicolon.\n" +
                 "Line 100: Missing semicolon.\n" +
-                "Line 101: Missing semicolon.";
+                "Line 101: Missing semicolon.\n";
+
+        assertEquals(manyErrors, App.theLintr("src/main/resources/gates.js"));
     }
-    //assertEquals(manyErrors, testLintr.lintr("src/main/resources/gates.js"));
 
 
 }

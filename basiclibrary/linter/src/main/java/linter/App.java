@@ -10,7 +10,7 @@ import java.util.Scanner;
 public class App {
 
     public static void main(String[] args) {
-
+        System.out.println("hello from linter " + args[0]);
         String returnString = theLintr("src/main/resources/gates.js");
         System.out.println(returnString);
     }
@@ -39,12 +39,13 @@ public class App {
                 char endChar = temp.charAt(temp.length() -1);
                 if (!(endChar == ';' ||  endChar == '{' || endChar == '}' || temp.contains("if") || temp.contains("else")))
                 {
-                    if(errorString.isBlank())
-                    {
-                        errorString = "Line " + counter + ": Missing semicolon.";
-                    }else{
-                        errorString = errorString + "\nLine " + counter + ": Missing semicolon.";
-                    }
+                    errorString = errorString + "Line " + counter + ": Missing semicolon.\n";
+//                    if(errorString.isBlank())
+//                    {
+//                        errorString = "Line " + counter + ": Missing semicolon.";
+//                    }else{
+//                        errorString = errorString + "\nLine " + counter + ": Missing semicolon.";
+//                    }
                 }
             }
         }
