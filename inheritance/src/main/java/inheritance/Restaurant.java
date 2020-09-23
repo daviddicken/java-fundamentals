@@ -12,18 +12,28 @@ public class Restaurant {
     private int restStars;
     private String price;
 
-
-
     //===========restaurant constructor ===================
     public Restaurant(String name, int restStars, String price)
     {
         this.name = name;
         this.restStars = restStars;
         this.price = price;
-        String listName = name + "List";
-        ArrayList<Reviews> reviewList = new ArrayList<>();
+        addToList(this);
 
     }
+
+    // Array list to hold restaurants
+    public ArrayList<Restaurant> restList = new ArrayList<>();
+    public void addToList(Restaurant rest){
+        //this.restList.add(rest);
+        rest.restList.add(this);
+        System.out.println("rest...." + rest);
+        System.out.println("this......" + this);
+        for(Restaurant item : restList)
+        {
+            System.out.println("item in for loop....." + item);
+        }
+    };
 
 
     //================ Getters ============================
@@ -53,7 +63,9 @@ public class Restaurant {
     }
 
     //=================== Methods =============================
-
+    public void addList(){
+        //restaurantList.add.this;
+    }
     public String toString(){
         return String.format("Name: %s \n Stars: %d \n Price: %s \n", name, restStars, price);
     }

@@ -15,6 +15,7 @@ public class Reviews extends Restaurant {
         this.author = author;
         this.reviewStars = stars;
         this.review = body;
+        addToList(this);
     }
 
     // Array list to hold reviews
