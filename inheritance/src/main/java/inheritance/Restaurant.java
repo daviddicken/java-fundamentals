@@ -3,11 +3,14 @@
  */
 package inheritance;
 
-import org.checkerframework.checker.units.qual.A;
 
 import java.util.ArrayList;
 
 public class Restaurant {
+
+    public Reviews reviewPotato;
+    public ArrayList<Reviews> restReviews = new ArrayList<>();
+
     private String name;
     private int restStars;
     private String price;
@@ -18,23 +21,8 @@ public class Restaurant {
         this.name = name;
         this.restStars = restStars;
         this.price = price;
-        addToList(this);
 
     }
-
-    // Array list to hold restaurants
-    public ArrayList<Restaurant> restList = new ArrayList<>();
-    public void addToList(Restaurant rest){
-        //this.restList.add(rest);
-        rest.restList.add(this);
-        System.out.println("rest...." + rest);
-        System.out.println("this......" + this);
-        for(Restaurant item : restList)
-        {
-            System.out.println("item in for loop....." + item);
-        }
-    };
-
 
     //================ Getters ============================
 
@@ -51,31 +39,34 @@ public class Restaurant {
     //=============== Setters ============================
 
     public void setName(String name) {
-        this.name = name;
+        name = name;
     }
 
     public void setRestStars(int restStars) {
-        this.restStars = restStars;
+        restStars = restStars;
     }
 
     public void setPrice(String price) {
-        this.price = price;
+        price = price;
     }
 
     //=================== Methods =============================
-    public void addList(){
-        //restaurantList.add.this;
-    }
-    public String toString(){
-        return String.format("Name: %s \n Stars: %d \n Price: %s \n", name, restStars, price);
-    }
 
-    public void addReview(ArrayList list, Reviews review)
+    public void addReview(String review, String author, int stars)
     {
-        list.add(review);
+        Reviews newReview = new Reviews(review, author, stars); // create new review
+        newReview.potato = this;                                // add restaurant to review
+        this.restReviews.add(newReview);                        // add review to restaurant
     }
 
+    public String toString(){
 
+        String returnString = String.format("Restaurant: %s %s Stars: %d\n", name, price, restStars);
 
+        for(Reviews review : restReviews){
+            returnString += String.format("\nReviewer: %s  Rating: %d\n%s\n", review.getAuthor(), review.getReviewStars(),review.getReview());
+        }
 
+        return returnString;
+    }
 }
