@@ -13,40 +13,22 @@ public class RestaurantTest {
     @Test public void testRestaurant() {
         Restaurant sharis = new Restaurant("Shari's", 2, "$$$");
 
-       // System.out.println(sharis);
+        assertEquals("Shari's", sharis.getName());
+        assertEquals(2, sharis.getRestStars());
+        assertEquals("$$$", sharis.getPrice());
+
     }
 
     @Test public void testReviews(){
         Restaurant sharis = new Restaurant("Sharis", 2, "$$$");
         Restaurant bobs = new Restaurant("Bobs", 4, "$$$$");
 
-        ArrayList<Restaurant> restList = new ArrayList<>();
-        Reviews review1 = new Reviews("Sharis", 2, "$$","This restaurant was absolutely average!!","Donald Smith", 4);
-        Reviews review2 = new Reviews("Sharis", 2, "$$","The food sucks, wait staff is awesome","Me", 2);
-        Reviews review3 = new Reviews("Bob's", 3, "$$$$", "love this place", "Brother Bob", 5);
-        Reviews review4 = new Reviews("Bob's", 3, "$$$$", "love this place, Awesome burgers", "Sally", 4);
 
+        sharis.addReview("This restaurant was absolutely average!!","Donald Smith", 4);
+        sharis.addReview("The food sucks, wait staff is awesome","Me", 2);
+        bobs.addReview("love this place", "Brother Bob", 5);
+        bobs.addReview("love this place, Awesome burgers", "Sally", 4);
 
-        sharis.addReview(review1.reviewList, review1);
-//        restList.add(review4);
-//        restList.add(review3);
-//        restList.add(review1);
-//        restList.add(sharis);
-//        restList.add(review2);
-//        //restList.add(bobs);
-//
-//        for(Restaurant item : restList)
-//        {
-//            System.out.println(item);
-//        }
-//        System.out.println("\nBreak\n");
-//        for(Restaurant review : restList)
-//        {
-//            System.out.println(review.getName());
-//        }
-
-       // System.out.println("List: " + restList);
-        //System.out.println(review1);
-        //System.out.println(review2);
+        // Not sure how to test this?
     }
 }
