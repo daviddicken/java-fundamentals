@@ -10,12 +10,12 @@ public class Reviews {
     private int reviewStars;
     private String review;
 
-   public Reviews(String body, String author, int stars)
+   public Reviews(String review, String author, int stars)
     {
 
         this.author = author;
         this.reviewStars = stars;
-        this.review = body;
+        this.review = review;
     }
 
     public String getAuthor(){return author; }
@@ -24,17 +24,17 @@ public class Reviews {
 
     public String getReview(){return review;}
 
-    public String toString(Restaurant potato){
+    public String toString(){
        return String.format("Restaurant: %s  %s  Stars: %d\nReviewer: %s\n%s", potato.getName(), potato.getPrice(), potato.getRestStars(), author, review);
     }
 
-    public String toString(Theater aTheater){
-        String returnString = String.format("**** %s ****\nMovie List:", aTheater.getName());
-        for(String movie : aTheater.getMovies()){
-            returnString += "\n" + movie;
-        }
-        returnString += String.format("\nReviewer: %s  Stars: %d\n%s",author,reviewStars,review);
-        return returnString;
-    }
+//    public String toString(Theater aTheater){
+//        String returnString = String.format("**** %s ****\nMovie List:", aTheater.getName());
+//        for(String movie : aTheater.getMovies()){
+//            returnString += "\n" + movie;
+//        }
+//        returnString += String.format("\nReviewer: %s  Stars: %d\n%s",author,reviewStars,review);
+//        return returnString;
+//    }
 }
 

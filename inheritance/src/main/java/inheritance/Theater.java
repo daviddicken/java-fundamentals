@@ -2,13 +2,14 @@ package inheritance;
 
 import java.util.ArrayList;
 
-public class Theater {
+public class Theater extends Shop{
 
     private String name;
     private ArrayList<String> movies;
     public ArrayList<Reviews> reviewList = new ArrayList<>();
 
-    public Theater(String name, ArrayList<String> movies){
+    public Theater(String name, String price, String desc, ArrayList<String> movies){
+        super(name,price,desc);
         this.name = name;
         this.movies = movies;
     }
