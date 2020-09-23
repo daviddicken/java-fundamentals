@@ -29,6 +29,60 @@ public class RestaurantTest {
         bobs.addReview("love this place", "Brother Bob", 5);
         bobs.addReview("love this place, Awesome burgers", "Sally", 4);
 
-        // Not sure how to test this?
+        String expected = "Restaurant: Bobs $$$$ Stars: 4\n" +
+                "\n" +
+                "Reviewer: Brother Bob  Rating: 5\n" +
+                "love this place\n" +
+                "\n" +
+                "Reviewer: Sally  Rating: 4\n" +
+                "love this place, Awesome burgers\n";
+        assertEquals(expected, bobs.toString());
+
+    }
+
+    @Test public void testShop(){
+        Shop jays = new Shop("Jay's", "$$$", "Local grocery store.");
+
+        assertEquals("Jay's",jays.getName());
+        assertEquals("$$$", jays.getPrice());
+        assertEquals("Local grocery store.", jays.getDesc());
+        String expeted = "Jay's  price: $$$,  Local grocery store.";
+        assertEquals(expeted, jays.toString());
+    }
+
+    @Test public void testTheater(){
+        ArrayList<String> amcMovies = new ArrayList<>();
+        Theater amc = new Theater("AMC", amcMovies);
+
+        assertEquals("AMC", amc.getName());
+
+        amc.addMovie("Die Hard");
+        amc.addMovie("Finding Nemo");
+        amc.addMovie("Avatar");
+
+        String expected = "**** AMC ****\n" +
+                "Movie List:\n" +
+                "Die Hard\n" +
+                "Finding Nemo\n" +
+                "Avatar";
+        assertEquals(expected, amc.toString());
+
+        amc.removeMovie("Die Hard");
+        expected = "**** AMC ****\n" +
+                "Movie List:\n" +
+                "Finding Nemo\n" +
+                "Avatar";
+        assertEquals(expected, amc.toString());
+
+        amc.removeMovie("Avatar");
+        amc.removeMovie("Finding Nemo");
+        expected = "**** AMC ****\n" +
+                "Movie List:";
+        assertEquals(expected, amc.toString());
+
+        amc.addReview("Poor movie selection", "PeeWee", 2);
+        amc.addReview("Saw Nemo for the first time!!", "Samuel", 4);
+
+        System.out.println("*** AMC: " + amc);
     }
 }
