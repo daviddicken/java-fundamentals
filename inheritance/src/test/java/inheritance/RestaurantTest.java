@@ -11,7 +11,7 @@ import static org.junit.Assert.*;
 
 public class RestaurantTest {
     @Test public void testRestaurant() {
-        Restaurant sharis = new Restaurant("Shari's", 2, "$$$");
+        Restaurant sharis = new Restaurant("Shari's", "$$$","A family dinning restaurant", 2);
 
         assertEquals("Shari's", sharis.getName());
         assertEquals(2, sharis.getRestStars());
@@ -20,8 +20,8 @@ public class RestaurantTest {
     }
 
     @Test public void testReviews(){
-        Restaurant sharis = new Restaurant("Sharis", 2, "$$$");
-        Restaurant bobs = new Restaurant("Bobs", 4, "$$$$");
+        Restaurant sharis = new Restaurant("Sharis", "$$$","A family dinning restaurant", 2);
+        Restaurant bobs = new Restaurant("Bobs", "$$$$","A burger joint", 4);
 
 
         sharis.addReview("This restaurant was absolutely average!!","Donald Smith", 4);
@@ -46,13 +46,13 @@ public class RestaurantTest {
         assertEquals("Jay's",jays.getName());
         assertEquals("$$$", jays.getPrice());
         assertEquals("Local grocery store.", jays.getDesc());
-        String expeted = "Jay's  price: $$$,  Local grocery store.";
-        assertEquals(expeted, jays.toString());
+        String expected = "Jay's  price: $$$,  Local grocery store.";
+        assertEquals(expected, jays.toString());
     }
 
     @Test public void testTheater(){
         ArrayList<String> amcMovies = new ArrayList<>();
-        Theater amc = new Theater("AMC", amcMovies);
+        Theater amc = new Theater("AMC","$","Place to watch movies on a big screen", amcMovies);
 
         assertEquals("AMC", amc.getName());
 
@@ -80,9 +80,12 @@ public class RestaurantTest {
                 "Movie List:";
         assertEquals(expected, amc.toString());
 
+        amc.addMovie("Die Hard");
+        amc.addMovie("Finding Nemo");
+        amc.addMovie("Avatar");
         amc.addReview("Poor movie selection", "PeeWee", 2);
         amc.addReview("Saw Nemo for the first time!!", "Samuel", 4);
 
-        System.out.println("*** AMC: " + amc);
+        System.out.println("amcTostring" + amc.toString());
     }
 }

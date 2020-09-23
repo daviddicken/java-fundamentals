@@ -6,7 +6,7 @@ package inheritance;
 
 import java.util.ArrayList;
 
-public class Restaurant {
+public class Restaurant extends Shop{
 
     public ArrayList<Reviews> restReviews = new ArrayList<>();
 
@@ -15,15 +15,16 @@ public class Restaurant {
     private String price;
 
     //===========restaurant constructor ===================
-    public Restaurant(String name, int restStars, String price)
+    public Restaurant (String name,  String price, String desc, int restStars)
     {
+        super(name,price,desc);
         this.name = name;
         this.restStars = restStars;
         this.price = price;
 
     }
 
-    //================ Getters ============================
+//================ Getters ============================
 
     public String getName(){
         return name;
