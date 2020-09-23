@@ -8,7 +8,6 @@ import java.util.ArrayList;
 
 public class Restaurant {
 
-    public Reviews reviewPotato;
     public ArrayList<Reviews> restReviews = new ArrayList<>();
 
     private String name;
