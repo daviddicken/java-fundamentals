@@ -10,10 +10,17 @@ import static org.junit.Assert.assertEquals;
 public class AppTest {
     @Test public void testAppHasAGreeting() {
         //App testLintr = new App();
+
+        // Test file with one error
         String oneError = "Line 4: Missing semicolon.\n";
+        assertEquals(oneError, App.theLintr("src/main/resources/oneError.js"));
+
+        // Test file with a few errors
         String fewErrors = "Line 1: Missing semicolon.\n" +
                 "Line 3: Missing semicolon.\n" +
                 "Line 5: Missing semicolon.\n";
+        assertEquals(fewErrors, App.theLintr("src/main/resources/fewErrors.js"));
+
         String manyErrors = "Line 3: Missing semicolon.\n" +
                 "Line 5: Missing semicolon.\n" +
                 "Line 11: Missing semicolon.\n" +
