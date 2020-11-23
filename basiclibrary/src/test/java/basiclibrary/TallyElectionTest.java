@@ -11,7 +11,13 @@ public class TallyElectionTest {
         TallyingElection tallyTest = new TallyingElection();
 
         List<String> votes = new ArrayList<>();
+        String winner = "Bush received the most votes!";
+
         votes.add("Bush");
+
+        //testing an arraylist with one iten
+        assertEquals(winner, tallyTest.tally(votes));
+        
         votes.add("Bush");
         votes.add("Bush");
         votes.add("Shrub");
@@ -21,7 +27,6 @@ public class TallyElectionTest {
         votes.add("Hedge");
         votes.add("Bush");
 
-        String winner = "Bush received the most votes!";
         assertEquals(winner, tallyTest.tally(votes));
     }
 }
