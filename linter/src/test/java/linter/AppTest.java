@@ -11,6 +11,12 @@ public class AppTest {
     @Test public void testAppHasAGreeting() {
         //App testLintr = new App();
 
+        //Test empty file
+        assertEquals("", App.theLintr("src/main/resources/empty.js"));
+
+        // Test file no errors
+        assertEquals("", App.theLintr("src/main/resources/noErrors.js"));
+
         // Test file with one error
         String oneError = "Line 4: Missing semicolon.\n";
         assertEquals(oneError, App.theLintr("src/main/resources/oneError.js"));

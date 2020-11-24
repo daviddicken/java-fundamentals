@@ -17,7 +17,7 @@ public class TallyElectionTest {
 
         //testing an arraylist with one iten
         assertEquals(winner, tallyTest.tally(votes));
-        
+
         votes.add("Bush");
         votes.add("Bush");
         votes.add("Shrub");
